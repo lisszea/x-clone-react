@@ -1,8 +1,12 @@
 import { ChatBubbleOvalLeftIcon, ArrowPathRoundedSquareIcon } from '@heroicons/react/24/outline';
+import { useNavigate } from 'react-router-dom';
 
 function Tweet({ tweet }) {
+
+    const navigate = useNavigate();
+
     return (
-        <div className="flex gap-4 p-4 items-start">
+        <div className="flex gap-4 p-4 items-start cursor-pointer" onClick={() => navigate(`/tweet/${tweet._id}`)}>
             <img className="rounded-full" src={tweet.user.profileImage} alt={tweet.user.name} width="40" />
             <div>
                 <a className="font-bold hover:underline mr-2" href="#">{tweet.user.name}</a>
