@@ -1,0 +1,72 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Andres Castillo",
+      "username": "acastillo",
+      "email": "acastillo@mail.com",
+      "birthDate": "2023-10-12",
+      "password": "123456",
+      "terms": true,
+      "profileImage": "https://randomuser.me/api/portraits/men/1.jpg"
+    },
+    {
+      "name": "Juan Cano",
+      "username": "juan.cano",
+      "email": "juan@mail.com",
+      "birthDate": "2023-10-15",
+      "password": "123456",
+      "terms": true,
+      "id": 2,
+      "profileImage": "https://randomuser.me/api/portraits/men/2.jpg"
+    },
+    {
+      "name": "Juana Rosera",
+      "username": "juana",
+      "email": "juana@mail.com",
+      "birthDate": "2023-10-12",
+      "password": "123456",
+      "terms": true,
+      "id": 3,
+      "profileImage": "https://randomuser.me/api/portraits/women/1.jpg"
+    }
+  ],
+  "tweets": [
+    {
+      "text": "new tweet",
+      "multi": "new tweet",
+      "user": {
+        "id": 3,
+        "name": "Juana Rosera",
+        "username": "juana",
+        "email": "juana@mail.com",
+        "profileImage": "https://randomuser.me/api/portraits/women/1.jpg"
+      },
+      "likes": 0,
+      "views": 0,
+      "replays": 0,
+      "retweets": 0,
+      "retweetId": null,
+      "creationDate": "Sat Oct 28 2023",
+      "id": 1
+    },
+    {
+      "text": "hello world",
+      "multi": "hello world",
+      "user": {
+        "id": 1,
+        "name": "Andres Castillo",
+        "username": "acastillo",
+        "email": "acastillo@mail.com",
+        "profileImage": "https://randomuser.me/api/portraits/men/1.jpg"
+      },
+      "likes": 0,
+      "views": 0,
+      "replays": 0,
+      "retweets": 0,
+      "retweetId": null,
+      "creationDate": "Sat Oct 28 2023",
+      "id": 2
+    }
+  ]
+}

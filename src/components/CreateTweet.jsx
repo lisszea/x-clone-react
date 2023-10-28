@@ -1,18 +1,14 @@
 import { useState } from "react";
-
-const user = {
-  id: "65182610a780df98aa42ca85",
-  name: "Juan Castro",
-  profileImage: "https://randomuser.me/api/portraits/men/1.jpg",
-};
+import { useAuth } from "../hooks/useAuth";
 
 function CreateTweet({ onSave }) {
+  const { user } = useAuth();
   const [text, setText] = useState("");
 
   const tweet = {
     text,
     multi: [],
-    userId: "6505da63e813e715c8b62662",
+    userId: user?.id,
   };
 
   const save = (tweet) => {
@@ -25,8 +21,8 @@ function CreateTweet({ onSave }) {
       <img
         className="rounded-full"
         width="40"
-        src={user.profileImage}
-        alt={user.name}
+        src={user?.profileImage}
+        alt={user?.name}
       />
       <div className="grow">
         <input

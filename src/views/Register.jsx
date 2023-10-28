@@ -2,11 +2,6 @@ import { Navigate, useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 import { useForm } from 'react-hook-form';
 
-const USER = {
-  username: "admin",
-  password: "123456",
-};
-
 function Register() {
   const navigate = useNavigate();
   const { user, login } = useAuth();
@@ -24,10 +19,22 @@ function Register() {
     // hacer una peticion fetch al servidor para que registre al usuario
     // fetch('/api/register', { method: 'POST', body: value });
 
-    console.log(value);
-    
-    login(value.username);
-    navigate("/");
+    fetch('http://localhost:3000/users', {
+      method: 'POST', 
+      headers: {
+        "Content-Type": "application/json",
+      }, 
+      body: JSON.stringify(value)
+    })
+      .then((res) => res.json())
+      .then((user) => {
+        console.log(user)
+        login(user.id);
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error)
+      });
   }
 
   return (

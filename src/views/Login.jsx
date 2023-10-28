@@ -1,10 +1,23 @@
 import { Navigate, useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 
-const USER = {
-  username: "admin",
-  password: "123456",
-};
+const USER = [
+  {
+    id: 1,
+    username: "acastillo",
+    password: "123456",
+  },
+  {
+    id: 2,
+    username: "juan.cano",
+    password: "123456",
+  },
+  {
+    id: 3,
+    username: "juana",
+    password: "123456",
+  }
+]
 
 function Login() {
   const navigate = useNavigate();
@@ -24,12 +37,13 @@ function Login() {
     // fetch('/api/login', { method: form.method, body: formData });
 
     const loginObject = Object.fromEntries(formData.entries());
-    if (
-      loginObject.username === USER.username &&
-      loginObject.password === USER.password
-    ) {
+    const userLogin = USER.find((user) => 
+      user.username === loginObject.username 
+      && user.password === loginObject.password
+    )
+    if (userLogin) {
       // login exitoso
-      login(loginObject.username);
+      login(userLogin.id);
       navigate("/");
     } else {
       // el login falló
