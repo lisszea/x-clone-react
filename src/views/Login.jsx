@@ -1,4 +1,4 @@
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate, useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 
 const USER = {
@@ -40,7 +40,7 @@ function Login() {
     <div className="w-screen h-screen flex justify-center items-center">
       <div className="p-4">
         <h2 className="mb-4 font-bold text-2xl">Sign In to X</h2>
-        <form className="flex flex-col" method="post" onSubmit={handleSubmit}>
+        <form className="flex flex-col items-center" method="post" onSubmit={handleSubmit}>
           <input
             className="mb-4 rounded-md p-2 text-black"
             type="text"
@@ -55,9 +55,10 @@ function Login() {
             id="password"
             placeholder="Password"
           />
-          <button className="bg-sky-500 py-2 px-4 rounded-full" type="submit">
-            Sing in
+          <button className="bg-sky-500 py-2 px-4 rounded-full w-full mb-4" type="submit">
+            Log In
           </button>
+          <Link className="hover:underline" to="/register">Sign Up</Link>
         </form>
       </div>
     </div>
