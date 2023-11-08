@@ -4,6 +4,7 @@
       "id": 1,
       "name": "Andres Castillo",
       "username": "acastillo",
+      "role": "admin",
       "email": "acastillo@mail.com",
       "birthDate": "2023-10-12",
       "password": "123456",
@@ -13,6 +14,7 @@
     {
       "name": "Juan Cano",
       "username": "juan.cano",
+      "role": "user",
       "email": "juan@mail.com",
       "birthDate": "2023-10-15",
       "password": "123456",
