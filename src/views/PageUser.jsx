@@ -1,5 +1,7 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
+
 
 import Imagen1 from "../assets/images/imagne1.jpg"
 import Imagen4 from "../assets/images/servicios.jpeg"
@@ -13,6 +15,7 @@ import Vet3 from "../assets/images/vet3.png"
 
 
 const PageUser = ({ id, title, content, image }) => {
+  const { logout } = useContext(AuthContext);
     const teamMembers = [
         { name: 'Orman Jesus Contreras Mulford', role: 'Soporte', image: Orman },
         { name: 'Liss', role: 'Jefa Ejecutiva', image: Lis },
@@ -191,6 +194,17 @@ todas las mascotas tengan acceso a la atención que merecen.`</p>
           </table>
         </div>
       </section>
+      <div className="flex gap-4 p- items-start">
+        <button
+          className="bg-blue-500 py-2 px-4 rounded-full text-white"
+          onClick={logout}
+        >
+        Cerrar Sesión
+        </button>
+        
+      </div>
+
+
     </div>
   );
 };
